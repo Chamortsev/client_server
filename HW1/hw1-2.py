@@ -7,3 +7,11 @@ words2 = ["class", "function", "method"]
 for i in words2:
     z = bytes(i, encoding='utf-8')
     print(type(z), z, len(z))
+
+# Вариант 2
+b = "b"
+
+for i in words2:
+    i = "'"+i+"'"
+    x = eval(b + i)
+    print(type(x), x, len(x))
