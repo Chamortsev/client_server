@@ -7,12 +7,12 @@ import subprocess
 from sys import platform
 import platform as p
 import chardet
-print(platform)
 
+print('Задание 5')
+print(platform)
 param = '-n' if p.system().lower() == 'windows' else '-c'
 sites = ['yandex.ru', 'youtube.com']
 max_lines = 5
-
 for site in sites:
     result = subprocess.Popen(['ping', param, '2', site], stdout=subprocess.PIPE)
     print(site)
