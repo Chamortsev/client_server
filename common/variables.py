@@ -14,7 +14,7 @@ ACCOUNT_NAME = 'account_name'
 PRESENCE = 'presence'
 RESPONSE = 'response'
 ERROR = 'error'
-RESPONDEFAULT_IP_ADDRESS = 'respondefault_ip_address'
+# RESPONDEFAULT_IP_ADDRESS = 'respondefault_ip_address'
 
 ERROR_ANSWER = {
     'status': 400,
