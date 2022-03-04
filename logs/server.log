@@ -1,0 +1,36 @@
+2022-03-04 11:56:48,527 CRITICAL config_server_log.py Критическая ошибка
+2022-03-04 11:56:48,528 ERROR    config_server_log.py Ошибка
+2022-03-04 11:56:48,528 DEBUG    config_server_log.py Отладочная информация
+2022-03-04 11:56:48,528 INFO     config_server_log.py Информационное сообщение
+2022-03-04 11:59:53,406 CRITICAL config_server_log.py Критическая ошибка
+2022-03-04 11:59:53,407 ERROR    config_server_log.py Ошибка
+2022-03-04 11:59:53,408 DEBUG    config_server_log.py Отладочная информация
+2022-03-04 11:59:53,408 INFO     config_server_log.py Информационное сообщение
+2022-03-04 11:59:57,806 CRITICAL config_server_log.py Критическая ошибка
+2022-03-04 11:59:57,831 ERROR    config_server_log.py Ошибка
+2022-03-04 11:59:57,831 DEBUG    config_server_log.py Отладочная информация
+2022-03-04 11:59:57,831 INFO     config_server_log.py Информационное сообщение
+2022-03-04 12:00:14,600 CRITICAL config_server_log.py Критическая ошибка
+2022-03-04 12:00:14,600 ERROR    config_server_log.py Ошибка
+2022-03-04 12:00:14,600 DEBUG    config_server_log.py Отладочная информация
+2022-03-04 12:00:14,600 INFO     config_server_log.py Информационное сообщение
+2022-03-04 12:00:19,759 CRITICAL config_server_log.py Критическая ошибка
+2022-03-04 12:00:19,760 ERROR    config_server_log.py Ошибка
+2022-03-04 12:00:19,760 DEBUG    config_server_log.py Отладочная информация
+2022-03-04 12:00:19,761 INFO     config_server_log.py Информационное сообщение
+2022-03-04 12:00:40,772 CRITICAL config_server_log.py Критическая ошибка
+2022-03-04 12:00:40,773 ERROR    config_server_log.py Ошибка
+2022-03-04 12:00:40,774 DEBUG    config_server_log.py Отладочная информация
+2022-03-04 12:00:40,774 INFO     config_server_log.py Информационное сообщение
+2022-03-04 12:04:27,946 CRITICAL config_server_log.py Критическая ошибка
+2022-03-04 12:04:27,947 ERROR    config_server_log.py Ошибка
+2022-03-04 12:04:27,949 DEBUG    config_server_log.py Отладочная информация
+2022-03-04 12:04:27,950 INFO     config_server_log.py Информационное сообщение
+2022-03-04 12:04:53,440 CRITICAL config_server_log.py Критическая ошибка
+2022-03-04 12:04:53,440 ERROR    config_server_log.py Ошибка
+2022-03-04 12:05:48,727 CRITICAL config_server_log.py Критическая ошибка
+2022-03-04 12:05:48,727 ERROR    config_server_log.py Ошибка
+2022-03-04 12:08:30,296 CRITICAL config_server_log.py Критическая ошибка
+2022-03-04 12:08:30,297 ERROR    config_server_log.py Ошибка
+2022-03-04 13:01:59,016 CRITICAL config_server_log.py Критическая ошибка
+2022-03-04 13:01:59,018 ERROR    config_server_log.py Ошибка

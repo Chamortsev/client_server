@@ -4,19 +4,22 @@ from common.msgs import error_answer
 from json import dumps, loads
 from socket import socket, AF_INET, SOCK_STREAM
 import sys
+import logs.config_server_log
+import logging
 
+log = logging.getLogger('Server')
 
 def get_port():
     try:
         listen_port = int(sys.argv[sys.argv.index('-p') + 1])
+        # listen_port = DEFAULT_PORT
         if 1024 < listen_port > 65535:
             raise ValueError
     except IndexError:
-        print('После параметра -\'p\' необходимо указать номер порта.')
+        log.critical('После параметра -\'p\' необходимо указать номер порта.')
         sys.exit(1)
     except ValueError:
-        print(
-            'В качастве порта может быть указано только число в диапазоне от 1024 до 65535.')
+        log.critical('В качастве порта может быть указано только число в диапазоне от 1024 до 65535.')
         sys.exit(1)
     return listen_port
 
@@ -24,9 +27,13 @@ def get_port():
 def get_address():
     try:
         listen_address = sys.argv[sys.argv.index('-a') + 1]
+        # listen_address = DEFAULT_IP_ADDRESS
     except IndexError:
         print(
             'После параметра \'a\'- необходимо указать ip адрес.')
+        sys.exit(1)
+    except ValueError:
+        print('Маска адреса *.*.*.*')
         sys.exit(1)
     return listen_address
 
@@ -35,13 +42,15 @@ def prepare_server():
     listen_port = DEFAULT_PORT
     if '-p' in sys.argv:
         listen_port = get_port()
-    listen_address = ''
+    listen_address = DEFAULT_IP_ADDRESS
     if '-a' in sys.argv:
         listen_address = get_address()
     SERVER_SOCK = socket()
     SERVER_SOCK.bind((listen_address, listen_port))
     SERVER_SOCK.listen(MAX_CONNECTIONS)
+    print(SERVER_SOCK.getsockname())
     return SERVER_SOCK
+
 
 def main():
     SERVER_SOCK = prepare_server()
