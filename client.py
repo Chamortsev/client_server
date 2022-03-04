@@ -5,7 +5,10 @@ from common.utils import create_message
 from json import loads
 import random
 import sys
+import logging
+import logs.config_client_log
 
+log = logging.getLogger('client')
 
 def send_msg(my_message):
     CLIENT_SOCK.send(create_message(my_message))
@@ -15,8 +18,8 @@ def get_serv_address():
     try:
         server_address = sys.argv[sys.argv.index('addr') + 1]
     except IndexError:
-        print(
-            'После параметра \'addr\'- необходимо указать адрес сервера.')
+        log.critical('После параметра \'addr\'- необходимо указать адрес сервера.')
+
         sys.exit(1)
     return server_address
 
@@ -26,11 +29,10 @@ def get_serv_port():
         server_port = int(sys.argv[sys.argv.index('-p') + 1])
         print(server_port)
         if 1024 < server_port > 65535:
-            print(
-                'В качастве порта может быть указано только число в диапазоне от 1024 до 65535.')
+            log.critical('В качастве порта может быть указано только число в диапазоне от 1024 до 65535.')
             sys.exit(1)
     except IndexError:
-        print('После параметра \'port\' необходимо указать номер порта.')
+        log.critical('После параметра \'port\' необходимо указать номер порта.')
         sys.exit(1)
 
     return server_port
@@ -47,7 +49,7 @@ def prepare_client():
     try:
         CLIENT_SOCK.connect((server_address, server_port))
     except Exception:
-        print('Проверьте порт и сервер')
+        log.error('Проверьте порт и сервер')
         sys.exit(1)
     return CLIENT_SOCK
 
@@ -60,24 +62,24 @@ if __name__ == '__main__':
     msg = loads(data)
 
     if msg['status'] == 200:
-        print(f'Соединение установленно! {CLIENT_SOCK}')
-        print(f'***Получено сообщение от сервера***\n Статус: {msg["status"]}\n Сообщение: {msg["answer"]}')
+        log.info(f'Соединение установленно! {CLIENT_SOCK}')
+        log.info(f'***Получено сообщение от сервера***\n Статус: {msg["status"]}\n Сообщение: {msg["answer"]}')
         random_message = [message, fail_message][random.randint(0, 1)]
-        print(f'Отправляем сообщение => {random_message}')
+        log.info(f'Отправляем сообщение => {random_message}')
         send_msg(random_message)
         try:
             data_answer = CLIENT_SOCK.recv(MAX_PACKAGE_LENGTH)
         except socket.timeout:
-            print('Не дождались сообщения')
+            log.error('Не дождались сообщения')
         answer = loads(data_answer)
         status = answer["status"]
         msg_client = answer['answer']
         if status == 200:
-            print(f'***Получено сообщение от сервера***\n Статус: {status}\n Сообщение: {msg_client}')
+            log.info(f'***Получено сообщение от сервера***\n Статус: {status}\n Сообщение: {msg_client}')
         else:
-            print('Ошибка')
-            print(f'Статус: {status}\n Сообщение: {msg_client}')
+            log.error('Ошибка')
+            log.error(f'Статус: {status}\n Сообщение: {msg_client}')
     else:
-        print('Ошибка')
-        print(f'Статус: {msg["status"]}\n Сообщение: {msg["answer"]}')
+        log.error('Ошибка')
+        log.error(f'Статус: {msg["status"]}\n Сообщение: {msg["answer"]}')
     CLIENT_SOCK.close()
