@@ -1,2 +1,34 @@
 2022-03-04 13:03:59,746 CRITICAL config_client_log.py Критическая ошибка
 2022-03-04 13:03:59,747 ERROR    config_client_log.py Ошибка
+2022-03-05 12:52:14,838 ERROR    client.py Ошибка
+2022-03-05 12:52:14,838 ERROR    client.py Статус: 400
+ Сообщение: Не верный формат запроса
+2022-03-05 12:52:18,845 ERROR    client.py Ошибка
+2022-03-05 12:52:18,846 ERROR    client.py Статус: 400
+ Сообщение: Не верный формат запроса
+2022-03-05 12:52:19,873 ERROR    client.py Ошибка
+2022-03-05 12:52:19,874 ERROR    client.py Статус: 400
+ Сообщение: Не верный формат запроса
+2022-03-05 12:53:02,651 ERROR    client.py Ошибка
+2022-03-05 12:53:02,652 ERROR    client.py Статус: 400
+ Сообщение: Не верный формат запроса
+2022-03-05 12:53:54,916 ERROR    client.py Ошибка
+2022-03-05 12:53:54,916 ERROR    client.py Статус: 400
+ Сообщение: Не верный формат запроса
+2022-03-05 12:53:58,241 ERROR    client.py Ошибка
+2022-03-05 12:53:58,242 ERROR    client.py Статус: 400
+ Сообщение: Не верный формат запроса
+2022-03-05 12:54:23,701 INFO     client.py Функция prepare_client: вызвана из функции  <module>
+2022-03-05 12:54:23,703 INFO     client.py prepare_client вернула <socket.socket fd=416, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 56230), raddr=('127.0.0.1', 7777)>
+2022-03-05 12:54:23,703 INFO     client.py Функция send_msg: вызвана из функции  <module>
+2022-03-05 12:54:23,703 INFO     client.py send_msg вернула None
+2022-03-05 12:54:23,704 INFO     client.py Соединение установленно! <socket.socket fd=416, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 56230), raddr=('127.0.0.1', 7777)>
+2022-03-05 12:54:23,704 INFO     client.py ***Получено сообщение от сервера***
+ Статус: 200
+ Сообщение: Guest, добро пожаловать в наш сервис
+2022-03-05 12:54:23,704 INFO     client.py Отправляем сообщение => {'name_client': 'Guest', 'event': 'message', 'text': 'Текст сообщения', 'time': 1646474063.6163645}
+2022-03-05 12:54:23,704 INFO     client.py Функция send_msg: вызвана из функции  <module>
+2022-03-05 12:54:23,705 INFO     client.py send_msg вернула None
+2022-03-05 12:54:23,705 INFO     client.py ***Получено сообщение от сервера***
+ Статус: 200
+ Сообщение: Уважаемый Guest, ответ на все вопросы и вообще 42
